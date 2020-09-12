@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-6">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="name">{{ 'FORM.NAME' | translate}}</label>
+                <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label for="document">{{ 'FORM.DOCUMENT' | translate}}</label>
+                <input type="text" (blur)="applyMask()"  class="form-control" id="document" formControlName="document" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="submit()">{{ 'FORM.SUBMIT' | translate }}</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <app-log></app-log>
+    </div>
+</div>

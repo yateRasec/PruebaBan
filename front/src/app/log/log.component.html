@@ -1,0 +1,9 @@
+<div class="log-container" #logContainer [scrollTop]="logScroll">
+    <div class="log" *ngFor="let l of log$ | async">
+        <div class="message">
+            <div class="date">{{l.date | date : 'short'}}</div>
+            <div class="action"> {{l.action}} </div>
+            <div class="response"> <span>Response: </span> {{l.response | json}} </div>
+        </div>
+    </div>
+</div>
